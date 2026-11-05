@@ -1,0 +1,43 @@
+PACOTE PARA JUNTADA NO PJe — Colmeia Soluções em Tecnologia Ltda (CNPJ 26.805.004/0001-30)
+
+O QUE JUNTAR (nesta ordem)
+  1. COL-000 - RELATORIO DE PAGAMENTOS.pdf ........ relatório principal (19 págs.)
+  2. Anexos\COL-001 ... COL-099 ..................... um volume por colaborador, em ordem alfabética
+     (contracheques e comprovantes mês a mês + "Outros documentos" da pasta do colaborador:
+      13º salário, informes de rendimentos, férias, contracheques complementares e comprovantes avulsos)
+
+  Todos os arquivos têm menos de 10 MB (limite do PJe-JT para PDF: Ato Conjunto 48/TST.CSJT.GP.SG.SETIC/2021).
+  Confirme o limite vigente no TRT do processo antes de protocolar.
+
+COMO PREENCHER NO PJe
+  - Tipo de documento: o que o advogado indicar (ex.: "Documento Diverso" / "Relatório").
+  - Descrição: use o próprio código + nome, ex.: "Anexo COL-007 - Hendrick Matheus Medeiros Lima".
+    Assim a citação "COL-007, pág. 12" feita no relatório leva direto ao documento certo nos autos.
+  - Sigilo: os anexos têm salários, PIS e dados bancários. Recomenda-se marcar como sigilosos
+    (ou requerer segredo de justiça), conforme orientação do advogado.
+  - Se o PJe limitar a quantidade de documentos por petição, divida em lotes mantendo a ordem dos códigos.
+
+LINKS
+  - Dentro de cada anexo: a capa tem o índice das competências; clicar numa linha vai à página do mês
+    e "voltar ao índice" (no topo de cada página) retorna à capa.
+  - Dentro do relatório: o sumário da capa leva a cada seção.
+  - Entre documentos (relatório -> anexo) a referência é pelo código do anexo e pela página,
+    porque cada arquivo vira um documento separado no PJe.
+
+INTEGRIDADE
+  O relatório (seção "Integridade dos anexos") lista o SHA-256 de cada anexo.
+  Para conferir um arquivo:  certutil -hashfile "arquivo.pdf" SHA256
+  SHA-256 do relatório COL-000 nesta geração:
+  43ccf37b9e167a7c84fa00ae1b0262ddb3e6a870f8b21717592ba51d3a5b9432
+  Se os arquivos forem gerados de novo, os hashes mudam — junte sempre o relatório e os anexos da MESMA geração.
+
+PREENCHER ANTES DE PROTOCOLAR
+  - Número do processo na capa do relatório (campo "Processo nº").
+
+COMO GERAR DE NOVO (pasta coleta\scripts)
+  node painel-gerar.mjs
+  node painel-status-gerar.mjs
+  node dossie-pdf-gerar.mjs --protocolo
+  node relatorio-pje-gerar.mjs
+
+Arquivos auxiliares (não juntar): anexos.json, _relatorio-fonte.html, _edge-perfil\
